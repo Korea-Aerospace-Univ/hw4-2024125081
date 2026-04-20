@@ -3,24 +3,24 @@
 int main()
 {
     int answer;
-    int what;
+    int question;
     int count = 0;
     
     scanf("%d", &answer);
     
     do
     {
-        scanf("%d", &what);
+        scanf("%d", &question);
         count++;
         
-    if (answer > what) {
-        printf("%d 보다 낮습니다\n", what);
+    if (answer > question) {
+        printf("%d>%d\n", answer, question);
     }
-    else if (answer < what) { printf("%d 보다 높습니다\n", what); }
-    else { printf("%d 정답입니다\n", what); }
+    else if (answer < question) { printf("%d<%d\n", answer, question); }
+    else { printf("%d==%d", answer, question); }
     }
     while (what != answer);
-    printf("시도횟수는 %d회\n", what);
+    printf("시도횟수는 %d회\n", question);
     
     return 0;
     
