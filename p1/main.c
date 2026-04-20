@@ -18,9 +18,11 @@ int main()
     }
     else if (answer < question) { printf("%d<?\n", question); }
     else { printf("%d==?", question); }
+
+        printf("시도횟수는 %d회\n", count);
     }
     while (question != answer);
-    printf("시도횟수는 %d회\n", count);
+    
     
     return 0;
     
