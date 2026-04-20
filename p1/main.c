@@ -14,10 +14,10 @@ int main()
         count++;
         
     if (answer > question) {
-        printf("%d>%d\n", answer, question);
+        printf("%d>?\n", answer);
     }
-    else if (answer < question) { printf("%d<%d\n", answer, question); }
-    else { printf("%d==%d", answer, question); }
+    else if (answer < question) { printf("%d<?\n", answer); }
+    else { printf("%d==?", answer); }
     }
     while (what != answer);
     printf("시도횟수는 %d회\n", question);
