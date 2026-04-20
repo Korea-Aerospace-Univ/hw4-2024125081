@@ -16,8 +16,8 @@ int main()
     if (answer > question) {
         printf("%d>?\n", question);
     }
-    else if (answer < question) { printf("%d<?\n", question); }
-    else { printf("%d==?", question); }
+    else if (answer < question) { printf("%d<?\n", question); } 
+    else { printf("%d==?", question); 
 
         printf("시도횟수는 %d회\n", count);
     }
