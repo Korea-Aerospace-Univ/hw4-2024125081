@@ -14,13 +14,13 @@ int main()
         count++;
         
     if (answer > question) {
-        printf("%d>?\n", answer);
+        printf("%d>?\n", question);
     }
-    else if (answer < question) { printf("%d<?\n", answer); }
-    else { printf("%d==?", answer); }
+    else if (answer < question) { printf("%d<?\n", question); }
+    else { printf("%d==?", question); }
     }
-    while (what != answer);
-    printf("시도횟수는 %d회\n", question);
+    while (question != answer);
+    printf("시도횟수는 %d회\n", count);
     
     return 0;
     
