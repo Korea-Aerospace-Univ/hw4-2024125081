@@ -2,39 +2,39 @@
 
 int main()
 {
-    int n;
-    char str[101];         //101만큼 생성할 수 있음
-
+    int n;                       //입력된 문자열의 길이 N을 저장하는 변수
+    char str[101];         //문자열을 저장할 문자 배열 
+                               //최대 100글자까지일 때, 마지믹ㅇ[ 문자열 끝을 표시하는 '\0'까지 포함해서 101칸 필요함
+             
+    scanf("%d", &n);                     //문자열 길이 N 입력받음
+    scanf("%s", str);                    // 실제 문자열 입력받아 str에 저장
     
-    scanf("%d", &n);
-    scanf("%s", str);
     
-    
-   int max_eng = 0, cur_eng = 0;     
-   int max_num = 0, cur_num = 0;
+   int max_eng = 0, cur_eng = 0;            //max_eng는 지금까지 나온 "연속된 소문자"의 최대 개수, cur_eng는 현재 위치까지 이어지고 있는 "연속된 소문자"
+   int max_num = 0, cur_num = 0;             //max_num은 지금까지 나온 "연속된 숫자"의 최대 개수, cur_num은 현재 위치까지 이어지고 있는 "연속된 숫자"의 개수
    
-   for (int i = 0; i<n; i++) {
-      char c = str[i];
-      
-      if (c >= 'a' && c<='z') {
-          cur_eng ++;
-          if (cur_eng > max_eng) {
-              max_eng = cur_eng;
+   for (int i = 0; i<n; i++) {                 //문자열의 첫 글자부터 n-1번째까지 하나씩 검사
+      char c = str[i];                           //i는 현재 검사 중인 문자의 위치(인덱스)
+                                                 //현재 검사 중인 문자를 c에 저장
+      if (c >= 'a' && c<='z') {                  //현재 문자가 영어 소문자라면
+          cur_eng ++;                             //소문자가 연속해서 나온 것이므로 현재 연속 소문자 개수를 1 증가시킴
+          if (cur_eng > max_eng) {                //지금 연속 개수가 지금까지의 최대값보다 크다면
+              max_eng = cur_eng;                 //최대 연속 소문자 개수를 새로 갱신
           }
-      } else {
-          cur_eng = 0;
-      }
+      } else {                                //현재 문자가 소문자가 아니라면 소문자 연속은 여기서 끊김
+          cur_eng = 0;                         //따라서 현재 연속 소문자 개수를 0으로 초기화
+      } 
       
-      if (c >= '0' && c<= '9') {
-          cur_num ++;
-          if (cur_num > max_num) {
-              max_num = cur_num;
+      if (c >= '0' && c<= '9') {             //현재 문자가 숫자 문자라면
+          cur_num ++;                          //숫자가 연속해서 나온 것이기에 현재 연속 숫자 개수를 1 증가시킴
+          if (cur_num > max_num) {             //지금 연속 숫자 개수가 지금까지의 최대값보다 크면
+              max_num = cur_num;                   //최대 연속 숫자 개수를 갱신
           }
-      } else {
-          cur_num = 0;
+      } else {                                //현재 문자가 숫자가 아니라면
+          cur_num = 0;                       //숫자 연속은 여기서 끊김 따라서 현재 연속 숫자 개수를 0으로 초기화
       }
    }
   
-   printf("%d\n", max_eng);
-   printf("%d\n", max_num);
+   printf("%d\n", max_eng);               //연속된 소문자의 최대 개수를 출력
+   printf("%d\n", max_num);                    //연속된 숫자의 최대 개수를 출력
 }
