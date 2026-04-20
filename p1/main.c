@@ -20,7 +20,7 @@ int main()
     } 
     else {
         printf("%d==?", question); 
-        printf("시도횟수는 %d회\n", count);
+        printf("%d", count);
     }
     while (question != answer);
     
